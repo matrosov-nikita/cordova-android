@@ -138,10 +138,10 @@ module.exports.get_gradle_wrapper = function () {
         if (dirs[0].split('-')[0] === 'gradle') {
             return path.join(androidStudioPath, dirs[0], 'bin', 'gradle');
         }
-    } else {
-        // OK, let's try to check for Gradle!
-        return forgivingWhichSync('gradle');
-    }
+    } 
+    
+    // OK, let's try to check for Gradle!
+    return forgivingWhichSync('gradle');
 };
 
 // Returns a promise. Called only by build and clean commands.
